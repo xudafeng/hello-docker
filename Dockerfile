@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:4
 
-ENV SERVER_PORT 8081
+ENV SERVER_PORT 5678
 
 MAINTAINER xdf<xudafeng@126.com>
 

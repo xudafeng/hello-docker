@@ -1,7 +1,15 @@
-FROM debian:jessie
+FROM mhart/alpine-node:4
+
+ENV SERVER_PORT 8081
 
 MAINTAINER xdf<xudafeng@126.com>
 
-COPY sources.list /etc/apt/sources.list
+RUN npm i startserver -g
 
-RUN echo hello xdf! && uname -a
+EXPOSE $SERVER_PORT
+
+COPY . /src
+
+WORKDIR /src
+
+ENTRYPOINT ["/src/entrypoint.sh"]
